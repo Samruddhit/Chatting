@@ -35,8 +35,9 @@ class Chatroom(models.Model):
 class Message(models.Model):
     created_at = models.DateTimeField(default=datetime.now)
     messages = models.CharField(max_length=1000)
-    user_id = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
-    chat_id = models.ForeignKey(to=Chatroom, on_delete=models.CASCADE)
+    #user_id = models.ForeignKey(to=UserProfile, on_delete=models.CASCADE)
+    # chat_id = models.ForeignKey(Chatroom, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.chat_id + self.user_id)
+        return str(self.messages)
+        #return str(self.chat_id + self.user_id)
