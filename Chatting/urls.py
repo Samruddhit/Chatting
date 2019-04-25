@@ -18,7 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    #(r'^admin/', include(admin.site.urls) ),
+
     url(r'^chat/', include('chat.urls')),
 
+    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
 ]
